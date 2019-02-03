@@ -1,0 +1,14 @@
+- hosts: masters
+  become: yes
+  tasks:
+    - name: Create centos user
+      user:
+        name: centos
+        password: 'password hash'
+        groups:
+        shell: /bin/bash
+        state: present
+        system: no
+        createhome: yes
+        home: /home/centos
+      
